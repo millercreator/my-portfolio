@@ -25,7 +25,7 @@ const fullstackProjects = [
 
 export function FullstackProjectsList() {
     return (
-        <section className="space-y-4">
+        <section className="space-y-2">
             {fullstackProjects.map((project) => (
                 <ProductProjectCard
                     key={project.title}

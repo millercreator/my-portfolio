@@ -66,12 +66,12 @@ export function UIUXProjectCarousel() {
   }
 
   return (
-    <div className="w-full py-4">
+    <div className="w-full">
       <Carousel setApi={setApi} className="w-full">
         <CarouselContent>
           {mockProjects.map((project, index) => (
             <CarouselItem key={index} className="basis-full">
-              <div className="p-2">
+              <div>
                 <UIUXProjectCard project={project} />
               </div>
             </CarouselItem>

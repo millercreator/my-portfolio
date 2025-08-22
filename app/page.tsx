@@ -21,12 +21,52 @@ import {
 } from "@/components/ui/timeline"
 import { cn } from "@/lib/utils";
 import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
-import { Separator } from "@/components/ui/separator";
 import { FullstackProjectsList } from "@/components/fullstack-projects-list";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+import { SocialPreviewCard } from "@/components/social-preview-card";
+
+// Mock data for social profiles
+const socialProfiles = [
+  {
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    username: "joshuamiller.eth",
+    link: "https://twitter.com/joshuamiller",
+    platform: "twitter",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/33.jpg",
+    username: "jmiller_dev",
+    link: "https://github.com/jmiller",
+    platform: "github",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/34.jpg",
+    username: "joshua.design",
+    link: "https://dribbble.com/joshua",
+    platform: "dribbble",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/35.jpg",
+    username: "joshua.linkedin",
+    link: "https://linkedin.com/in/joshuamiller",
+    platform: "linkedin",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/36.jpg",
+    username: "joshua.medium",
+    link: "https://medium.com/@joshua",
+    platform: "medium",
+  },
+  {
+    image: "https://randomuser.me/api/portraits/men/37.jpg",
+    username: "joshua.web3",
+    link: "https://web3.social/joshua",
+    platform: "web3",
+  },
+];
 
 export default function Home() {
   const [activeSnapShot, setActiveSnapShot] = useState<null | string>("uiux");
-  // Add state for active skill button
   const [activeSkill, setActiveSkill] = useState<string | null>(null);
 
   // List of skills for the buttons
@@ -37,40 +77,96 @@ export default function Home() {
     { key: "security", label: "Smart Contract Security" },
   ];
 
+  // Helper to show all project previews when nothing is selected
+  function renderProjectPreview() {
+    return (
+      <>
+        {(activeSkill === null || activeSkill === "uiux") && (
+          <div className="py-6 border-b">
+            <UIUXProjectCarousel />
+          </div>
+        )}
+        {(activeSkill === null || activeSkill === "fullstack") && (
+          <div className="py-6 border-b">
+            <FullstackProjectsList />
+          </div>
+        )}
+        {(activeSkill === null || activeSkill === "ai") && (
+          <div className="py-6 border-b text-muted-foreground text-center">
+            <span>No AI projects to show yet.</span>
+          </div>
+        )}
+        {(activeSkill === null || activeSkill === "security") && (
+          <div className="py-6 border-b text-muted-foreground text-center">
+            <span>No Smart Contract Security projects to show yet.</span>
+          </div>
+        )}
+      </>
+    );
+  }
+
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 min-h-screen">
-      <section className="mb-16">
-        <h1 className="font-semibold text-base leading-7">Joshua Miller</h1>
-        <div className="flex items-center gap-2 group">
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button
-                variant="link"
-                className="text-muted-foreground text-base p-0 h-auto font-normal hover:cursor-pointer hover:no-underline"
-              >
-                Full-Stack Engineer
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent className="min-h-[50vh] ">
-              <div className="mx-auto w-full max-w-3xl h-full">
-                <DrawerHeader>
-                  <DrawerTitle className="mt-8 mb-4 text-xl text-start">Who is a Full-Stack Engineer?</DrawerTitle>
-                  <DrawerDescription className="text-base text-start">
-                    A Full-Stack Engineer is a developer who can work on both the front-end and back-end of applications.
-                    They handle everything from user interface design and user experience to server-side logic, databases,
-                    and system architecture.
-                    {<span className="block my-6" />}
-                    Full-Stack Engineers are versatile problem-solvers who can build complete
-                    applications from start to finish, making them valuable team members who can bridge different technical
-                    domains and contribute to all aspects of software development.
-                  </DrawerDescription>
-                </DrawerHeader>
-              </div>
-            </DrawerContent>
-          </Drawer>
-          <Info
-            className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-          />
+      <section className="mb-16 flex flex-col md:flex-row w-full md:justify-between">
+        <div>
+          <h1 className="font-semibold text-base leading-7">Joshua Miller</h1>
+          <div className="flex items-center gap-2 group">
+            <Drawer>
+              <DrawerTrigger asChild>
+                <Button
+                  variant="link"
+                  className="text-muted-foreground text-base p-0 h-auto font-normal hover:cursor-pointer hover:no-underline"
+                >
+                  Full-Stack Engineer
+                </Button>
+              </DrawerTrigger>
+              <DrawerContent className="min-h-[50vh] ">
+                <div className="mx-auto w-full max-w-3xl h-full">
+                  <DrawerHeader>
+                    <DrawerTitle className="mt-8 mb-4 text-xl text-start">Who is a Full-Stack Engineer?</DrawerTitle>
+                    <DrawerDescription className="text-base text-start">
+                      A Full-Stack Engineer is a developer who can work on both the front-end and back-end of applications.
+                      They handle everything from user interface design and user experience to server-side logic, databases,
+                      and system architecture.
+                      {<span className="block my-6" />}
+                      Full-Stack Engineers are versatile problem-solvers who can build complete
+                      applications from start to finish, making them valuable team members who can bridge different technical
+                      domains and contribute to all aspects of software development.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                </div>
+              </DrawerContent>
+            </Drawer>
+            <Info
+              className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+            />
+          </div>
+        </div>
+        <div>
+          <div className="bg-muted rounded-xl p-4">
+            <div className="grid grid-cols-6 gap-2">
+              {/* use hover card here */}
+              {socialProfiles.map((profile, i) => (
+                <HoverCard key={i}>
+                  <HoverCardTrigger asChild>
+                    <span
+                      className="w-4 h-4 rounded-full bg-primary inline-block cursor-pointer"
+                      tabIndex={0}
+                      aria-label={`Show ${profile.username} social preview`}
+                    />
+                  </HoverCardTrigger>
+                  <HoverCardContent className="p-0 w-auto shadow-none border-none">
+                    <SocialPreviewCard
+                      image={profile.image}
+                      username={profile.username}
+                      link={profile.link}
+                      platform={profile.platform}
+                    />
+                  </HoverCardContent>
+                </HoverCard>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -262,17 +358,13 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="">
-          {/* Display projects previews */}
-
-          <div className="mb-10 border-b">
-            <UIUXProjectCarousel />
-          </div>
-          <div className="mb-10 border-b">
-            <FullstackProjectsList />
-          </div>
-        </div>
+        {renderProjectPreview()}
       </section>
+
+      {/* <section className="mb-16">
+        <p className="mb-6 text-base font-semibold">Work Experience</p>
+
+      </section> */}
     </div>
   )
 }
