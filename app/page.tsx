@@ -20,6 +20,7 @@ import {
   TimelineLine,
 } from "@/components/ui/timeline"
 import { cn } from "@/lib/utils";
+import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
 
 export default function Home() {
   const [activeSnapShot, setActiveSnapShot] = useState<null | string>("uiux");
@@ -258,9 +259,13 @@ export default function Home() {
             </Button>
           ))}
         </div>
-        
+
         <div className="">
-        {/* Display projects previews */}
+          {/* Display projects previews */}
+
+          <div>
+            <UIUXProjectCarousel />
+          </div>
         </div>
       </section>
     </div>
