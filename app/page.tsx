@@ -21,6 +21,8 @@ import {
 } from "@/components/ui/timeline"
 import { cn } from "@/lib/utils";
 import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
+import { Separator } from "@/components/ui/separator";
+import { FullstackProjectsList } from "@/components/fullstack-projects-list";
 
 export default function Home() {
   const [activeSnapShot, setActiveSnapShot] = useState<null | string>("uiux");
@@ -263,8 +265,11 @@ export default function Home() {
         <div className="">
           {/* Display projects previews */}
 
-          <div>
+          <div className="mb-10 border-b">
             <UIUXProjectCarousel />
+          </div>
+          <div className="mb-10 border-b">
+            <FullstackProjectsList />
           </div>
         </div>
       </section>
