@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
+// import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
 import { FullstackProjectsList } from "@/components/fullstack-projects-list";
 import { mockData } from "@/app/data/mock-data";
+import { UploadProgressCard } from "@/components/upload-progress";
 
 export function ProjectsSection() {
-  const [activeSkill, setActiveSkill] = useState<string | null>(null);
+  const [activeSkill, setActiveSkill] = useState<string | null>("fullstack");
 
   // Helper to show all project previews when nothing is selected
   function renderProjectPreview() {
@@ -15,7 +16,8 @@ export function ProjectsSection() {
       <>
         {(activeSkill === null || activeSkill === "uiux") && (
           <div className="py-6 border-b">
-            <UIUXProjectCarousel />
+            {/* <UIUXProjectCarousel /> */}
+            <UploadProgressCard />
           </div>
         )}
         {(activeSkill === null || activeSkill === "fullstack") && (
@@ -24,13 +26,13 @@ export function ProjectsSection() {
           </div>
         )}
         {(activeSkill === null || activeSkill === "ai") && (
-          <div className="py-6 border-b text-muted-foreground text-center">
-            <span>No AI projects to show yet.</span>
+          <div className="py-6 border-b flex justify-center">
+            <UploadProgressCard />
           </div>
         )}
         {(activeSkill === null || activeSkill === "security") && (
-          <div className="py-6 border-b text-muted-foreground text-center">
-            <span>No Smart Contract Security projects to show yet.</span>
+          <div className="py-6 border-b flex justify-center">
+            <UploadProgressCard />
           </div>
         )}
       </>

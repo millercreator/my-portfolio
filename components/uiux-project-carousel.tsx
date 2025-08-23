@@ -5,52 +5,9 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel"
-import { UIUXProjectCard, UIUXProjectPreviewDetails } from "./uiux-project-card"
+import { UIUXProjectCard } from "./uiux-project-card"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-
-// Mock data for UI/UX projects
-const mockProjects: UIUXProjectPreviewDetails[] = [
-  {
-    title: "E-commerce App Redesign",
-    role: "Lead UI/UX Designer",
-    description: "Complete redesign of mobile e-commerce app focusing on improved user flow and conversion rates.",
-    link: "https://example.com/project1",
-    images: [
-      "/mock-images/1.png",
-      "/mock-images/2.png",
-    ]
-  },
-  {
-    title: "Healthcare Dashboard",
-    role: "Lead UI/UX Designer",
-    description: "Patient management dashboard designed for healthcare providers with accessibility focus.",
-    link: "https://example.com/project2",
-    images: [
-      "/mock-images/1.png",
-      "/mock-images/2.png",
-    ]
-  },
-  {
-    title: "Travel Booking Platform",
-    role: "Lead UI/UX Designer",
-    description: "Streamlined booking experience for travel accommodations with smart search and filtering.",
-    link: "https://example.com/project3",
-    images: [
-      "/mock-images/1.png",
-      "/mock-images/2.png",
-    ]
-  },
-  {
-    title: "Social Media Analytics",
-    role: "Lead UI/UX Designer",
-    description: "Data visualization dashboard for social media marketers with interactive charts and reports.",
-    link: "https://example.com/project4",
-    images: [
-      "/mock-images/1.png",
-      "/mock-images/2.png",
-    ]
-  }
-]
+import { mockData } from "@/app/data/mock-data"
 
 export function UIUXProjectCarousel() {
   const [api, setApi] = useState<CarouselApi | null>(null)
@@ -69,7 +26,7 @@ export function UIUXProjectCarousel() {
     <div className="w-full">
       <Carousel setApi={setApi} className="w-full">
         <CarouselContent>
-          {mockProjects.map((project, index) => (
+          {mockData.uiuxProjects.map((project, index) => (
             <CarouselItem key={index} className="basis-full">
               <div>
                 <UIUXProjectCard project={project} />

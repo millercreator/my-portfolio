@@ -23,10 +23,78 @@ export const mockData = {
   ],
 
   skills: [
-    { key: "uiux", label: "UI/UX Design" },
     { key: "fullstack", label: "Full-Stack" },
+    { key: "uiux", label: "UI/UX Design" },
     { key: "ai", label: "AI" },
     { key: "security", label: "Smart Contract Security" },
+  ],
+
+  // UI/UX Projects data
+  uiuxProjects: [
+    {
+      title: "E-commerce App Redesign",
+      role: "Lead UI/UX Designer",
+      description: "Complete redesign of mobile e-commerce app focusing on improved user flow and conversion rates.",
+      link: "https://example.com/project1",
+      images: [
+        "/mock-images/1.png",
+        "/mock-images/2.png",
+      ]
+    },
+    {
+      title: "Healthcare Dashboard",
+      role: "Lead UI/UX Designer",
+      description: "Patient management dashboard designed for healthcare providers with accessibility focus.",
+      link: "https://example.com/project2",
+      images: [
+        "/mock-images/1.png",
+        "/mock-images/2.png",
+      ]
+    },
+    {
+      title: "Travel Booking Platform",
+      role: "Lead UI/UX Designer",
+      description: "Streamlined booking experience for travel accommodations with smart search and filtering.",
+      link: "https://example.com/project3",
+      images: [
+        "/mock-images/1.png",
+        "/mock-images/2.png",
+      ]
+    },
+    {
+      title: "Social Media Analytics",
+      role: "Lead UI/UX Designer",
+      description: "Data visualization dashboard for social media marketers with interactive charts and reports.",
+      link: "https://example.com/project4",
+      images: [
+        "/mock-images/1.png",
+        "/mock-images/2.png",
+      ]
+    }
+  ],
+
+  // Fullstack Projects data
+  fullstackProjects: [
+    {
+      logo: "/mock-images/12.png",
+      title: "Task Manager",
+      description: "Plan tasks, track progress, ship features, simple for dev teams",
+    },
+    {
+      logo: "/mock-images/22.png",
+      title: "Bill Payment Platform",
+      description: "Manage accounts, send money, track spending, secure banking",
+    },
+    {
+      logo: "/mock-images/11.png",
+      title: "Team Chat App",
+      description: "Real-time chat, fast messaging, reliable, easy for teams",
+    },
+    {
+      logo: "/mock-images/22.png",
+      title: "Issue Tracker",
+      description: "Track bugs, assign issues, comment, close tickets quickly",
+    },
   ],
 
   timelineItems: [
