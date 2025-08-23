@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image"
 import { useState } from "react";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/timeline";
 import { cn } from "@/lib/utils";
 import { mockData } from "@/app/data/mock-data";
+import { Separator } from "./ui/separator";
 
 export function KnowledgeTimeline() {
   const [activeSnapShot, setActiveSnapShot] = useState<null | string>("uiux");
@@ -43,20 +45,38 @@ export function KnowledgeTimeline() {
             <TimelineLine done={item.status === "done"} />
             <TimelineContent className="mt-3 ml-2">
               {item.description}
-              <br />
-              <span className="block my-2" />
+              <span className="block my-4" />
               <strong>{item.period}:</strong> {item.summary}
 
               <div
                 className={cn(
-                  "transition-all duration-500 ease-in-out overflow-hidden bg-gray-200 rounded-md w-full",
+                  "transition-all duration-500 ease-in-out overflow-hidden rounded-md w-full flex items-stretch",
                   activeSnapShot === item.key
                     ? "h-32 opacity-100 mt-3"
                     : "h-0 opacity-0 mt-0"
                 )}
                 aria-hidden={activeSnapShot !== item.key}
               >
-                {/* Display more stuffs */}
+                {/* <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:w-0.5" /> */}
+
+                <div className="p-4 flex-1">
+                  <p className="text-base font-medium mb-3">Tools & Frameworks Used:</p>
+                  <div className="flex flex-wrap gap-4 items-center">
+                    {item.tools && item.tools.map((toolSrc, idx) => (
+                      <div
+                        key={toolSrc + idx}
+                        className="relative size-[32px] transition-transform duration-200 hover:scale-150"
+                      >
+                        <Image
+                          src={toolSrc}
+                          alt="Tool"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </TimelineContent>
           </TimelineItem>

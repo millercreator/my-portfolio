@@ -35,40 +35,76 @@ export const mockData = {
       title: "UI/UX Designer",
       period: "2018 - 2020",
       status: "done",
-      description: "From being obsessed with great design on Pinterest and Dribbble, to studying and implementing micro UI patterns and usability best practices, this period made me obsessed with designing softwares that feels good to use.",
-      summary: "Taught me to create interfaces that are both functional and visually appealing. I understand that great functionality means nothing if users can't navigate it easily."
+      description:
+        "I started by diving deep into design, learning from platforms like Pinterest and Dribbble. I focused on small details and best practices, making sure every app I touched felt smooth and easy to use.",
+      summary:
+        "This phase taught me that good design is about making things simple and enjoyable. I learned to always put the user first.",
+      tools: [
+        "/icons/behance.svg",
+        "/icons/dribbble.svg",
+        "/icons/figma.svg",
+        "/icons/layers.svg",
+        "/icons/notebook-and-pen.svg",
+        "/icons/pinterest.svg",
+      ]
     },
     {
       key: "frontend",
       title: "Frontend Engineer",
       period: "2020 - 2023",
       status: "done",
-      description: "My transition point came from my desire to connect the 5.56 Billion web users together one person at a time, through seemless user-friendly web experience. This gave me the opportunity to delve into more technical aspect of tech which i quickly desired.",
-      summary: "Taught me to create responsive user-friendly web experiences shaped by my background in UIUX design."
+      description:
+        "My design skills pushed me to build real, interactive web experiences. I wanted to connect people through easy-to-use websites. This step let me turn ideas into working products, using my eye for design to guide every decision.",
+      summary:
+        "I learned to turn designs into fast, friendly websites. My design background made my code more thoughtful and user-focused.",
+      tools: [
+        "/icons/nextjs.svg",
+        "/icons/reactjs.svg",
+        "/icons/tailwindcss.svg",
+        "/icons/typescript.svg",
+        "/icons/javascript.svg",
+        "/icons/graphql.svg",
+      ]
     },
     {
       key: "backend",
       title: "Backend Engineer",
       period: "2023 - 2024",
       status: "done",
-      description: "Curios about what goes on behing the scene of successfull web applications, I learned to build server-side logic, APIs, and model databases using Node and related tools. ",
-      summary: "Ensured all server processes and systems work smoothly and can handle growth."
+      description:
+        "Curious about how things work behind the scenes, I moved into backend development. I built APIs, handled data, and made sure everything ran smoothly. This helped me see how the frontend and backend fit together.",
+      summary:
+        "I made sure the systems powering the apps were strong and could grow. This made my work more complete and reliable.",
+      tools: [
+        "/icons/nodejs.svg",
+        "/icons/nestjs.svg",
+        "/icons/expressjs.svg",
+        "/icons/python.svg",
+        "/icons/fastapi.svg",
+        "/icons/postgressql.svg",
+      ]
     },
     {
       key: "ai",
       title: "AI Engineer",
       period: "2024 - 2025",
       status: "done",
-      description: "While working at an AI agency, I learned about machine learning and language models. I used these skills to add AI features to apps, build data pipelines, and deploy models. Eventually leading me to become the lead AI developer.",
-      summary: "Taught me to build smarter apps and solve real-world problems."
+      description:
+        "Working at an AI agency, I learned about machine learning and language models. I used these tools to make apps smarter and more helpful. This step built on my backend skills, letting me solve new kinds of problems.",
+      summary:
+        "I learned to add smart features to apps, making them more useful and able to handle real-world needs.",
+      tools: []
     },
     {
       key: "security",
       title: "Smart Contract Security",
-      period: "2023 - Present",
+      period: "2025 - Present",
       status: "current",
-      description: "I'm currently learning about blockchain and smart contract security. I am focused learning the methologies, mindset and practices required to keep this sophisticated tech safe and secure.",
-      summary: "Extends my mindset into trust, security, and reliability."
+      description:
+        "Now, I'm focused on blockchain and smart contract security. I'm learning how to keep new tech safe, using everything I've learned so far. My goal is to build systems people can trust.",
+      summary:
+        "This step is about trust and safety. It ties together my design, coding, and AI experience to protect users and data.",
+      tools: []
     }
   ] as const,
 
