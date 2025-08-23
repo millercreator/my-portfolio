@@ -23,7 +23,7 @@ export function KnowledgeTimeline() {
       <Timeline>
         {mockData.timelineItems.map((item) => (
           <TimelineItem key={item.key} status={item.status === "current" ? undefined : item.status}>
-            <TimelineHeading side={item.side} className="text-base">
+            <TimelineHeading side="right" className="text-base">
               {item.title} - <span className="text-muted-foreground">({item.period})</span>
               <Button
                 size="lg"

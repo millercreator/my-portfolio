@@ -65,7 +65,7 @@ const TimelineItem = React.forwardRef<HTMLLIElement, TimelineItemProps>(
 TimelineItem.displayName = 'TimelineItem'
 
 const timelineDotVariants = cva(
-   'col-start-2 col-end-3 row-start-1 row-end-1 flex size-4 items-center justify-center rounded-full border border-current',
+   'col-start-2 col-end-3 row-start-1 row-end-1 flex size-4.5 items-center justify-center rounded-full border border-current',
    {
       variants: {
          status: {

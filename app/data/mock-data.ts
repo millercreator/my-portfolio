@@ -21,55 +21,70 @@ export const mockData = {
       platform: "github",
     }
   ],
-  
+
   skills: [
     { key: "uiux", label: "UI/UX Design" },
     { key: "fullstack", label: "Full-Stack" },
     { key: "ai", label: "AI" },
     { key: "security", label: "Smart Contract Security" },
   ],
-  
+
   timelineItems: [
     {
       key: "uiux",
       title: "UI/UX Designer",
-      period: "2016 - 2018",
+      period: "2018 - 2020",
       status: "done",
-      side: "left",
-      description: "Learned how to design for people, not just screens. Did lots of usability testing and built quick prototypes to improve how things flow.",
-      summary: "2016-2018: Taught me to always think about the end user first."
+      description: "From being obsessed with great design on Pinterest and Dribbble, to studying and implementing micro UI patterns and usability best practices, this period made me obsessed with designing softwares that feels good to use.",
+      summary: "Taught me to create interfaces that are both functional and visually appealing. I understand that great functionality means nothing if users can't navigate it easily."
     },
     {
-      key: "fullstack",
-      title: "Full-Stack Engineer",
-      period: "2018 - 2021",
+      key: "frontend",
+      title: "Frontend Engineer",
+      period: "2020 - 2023",
       status: "done",
-      side: "right",
-      description: "Moved into building both front-end and back-end (React, Node, APIs, databases). Turned design ideas into real, working products.",
-      summary: "2018-2021: Gave me the ability to ship end-to-end solutions."
+      description: "My transition point came from my desire to connect the 5.56 Billion web users together one person at a time, through seemless user-friendly web experience. This gave me the opportunity to delve into more technical aspect of tech which i quickly desired.",
+      summary: "Taught me to create responsive user-friendly web experiences shaped by my background in UIUX design."
+    },
+    {
+      key: "backend",
+      title: "Backend Engineer",
+      period: "2023 - 2024",
+      status: "done",
+      description: "Curios about what goes on behing the scene of successfull web applications, I learned to build server-side logic, APIs, and model databases using Node and related tools. ",
+      summary: "Ensured all server processes and systems work smoothly and can handle growth."
     },
     {
       key: "ai",
       title: "AI Engineer",
-      period: "2021 - 2023",
+      period: "2024 - 2025",
       status: "done",
-      side: "left",
-      description: "Learned about machine learning and language models. Integrated AI into apps, worked with data pipelines and model deployment.",
-      summary: "2021-2023: Added intelligence to the systems I was already building."
+      description: "While working at an AI agency, I learned about machine learning and language models. I used these skills to add AI features to apps, build data pipelines, and deploy models. Eventually leading me to become the lead AI developer.",
+      summary: "Taught me to build smarter apps and solve real-world problems."
     },
     {
       key: "security",
       title: "Smart Contract Security",
       period: "2023 - Present",
       status: "current",
-      side: "right",
-      description: "Studying Solidity, auditing, and security tools. Practicing bug-finding and learning how to spot vulnerabilities.",
-      summary: "2023-Present: Extends my mindset into trust, security, and reliability."
+      description: "I'm currently learning about blockchain and smart contract security. I am focused learning the methologies, mindset and practices required to keep this sophisticated tech safe and secure.",
+      summary: "Extends my mindset into trust, security, and reliability."
     }
-  ],
-  
+  ] as const,
+
   aboutText: {
-    main: "I build secure, intelligent, user-friendly apps and audit smart contracts. I like to create solutions that bridge the gap between complex technology and intuitive user experiences.",
-    secondary: "Previously, I worked on various full-stack projects focusing on security and smart contract development."
+    main: "👋🏻 Hi, I'm a fullstack engineer with over 4 years of hands-on experience building modern web applications using rapid development practices. I focus on writing clean, scalable code that follows industry standards and best practices.",
+    secondary: "My technical foundation covers system design and both backend and frontend technologies, which lets me work effectively across different parts of the stack."
   }
 };
+
+/**
+ * I am a fullstack engineer with 4+ years of hands on experience in morderm rapid development
+ * Following industry best practices and convetions, i build scalable web applications,
+ * I might not know, but i will surely figure it out, this qualities make me work in a cross functional tasks, from mobile development, to web, design and AI
+ * Complex problem is just a problem not broken down enough, 
+ * I have strong technical and problem solving foundation in both backend and frontend technology
+ * My 3+ years of design experience has trained my eyes to only build software that feels and looks good using it
+ * I prioritize security
+ * 
+ * */
