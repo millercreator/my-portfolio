@@ -24,14 +24,14 @@ export function FloatingNav() {
             icon: (
                 <IconTimeline className="h-full w-full text-neutral-500 dark:text-neutral-300" />
             ),
-            href: "#",
+            href: "#knowledge",
         },
         {
             title: "Projects",
             icon: (
                 <IconFolder className="h-full w-full text-neutral-500 dark:text-neutral-300" />
             ),
-            href: "#",
+            href: "#projects",
         },
         {
             title: "Twitter",

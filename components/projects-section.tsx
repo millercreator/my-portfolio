@@ -41,7 +41,7 @@ export function ProjectsSection() {
 
   return (
     <section className="mb-16">
-      <p className="mb-6 font-semibold text-3xl font-display italic">Projects</p>
+      <p className="mb-6 font-semibold text-3xl font-display italic" id="projects">Projects</p>
       <div className="flex flex-wrap gap-2">
         {mockData.skills.map((skill) => (
           <Button

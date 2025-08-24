@@ -21,7 +21,7 @@ export function KnowledgeTimeline() {
 
   return (
     <section className="mb-16">
-      <p className="mb-6 font-semibold text-3xl font-display italic">Knowledge Timeline</p>
+      <p className="mb-6 font-semibold text-3xl font-display italic" id="knowledge">Knowledge Timeline</p>
       <Timeline>
         {mockData.timelineItems.map((item) => (
           <TimelineItem key={item.key} status={item.status === "current" ? undefined : item.status}>
