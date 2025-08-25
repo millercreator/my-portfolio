@@ -13,6 +13,7 @@ import {
     DrawerDescription,
 } from "@/components/ui/drawer";
 import { Badge } from "@/components/ui/badge";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type ProductProjectCardProps = {
     logo: string;
@@ -90,82 +91,84 @@ export function ProductProjectCard({
                         <Plus size={20} />
                     </Button>
                 </DrawerTrigger>
-                <DrawerContent className="min-h-[50vh] ">
+                <DrawerContent className="min-h-[50vh] max-h-[90vh]">
                     <div className="mx-auto w-full max-w-3xl h-full">
-                        <DrawerHeader>
-                            <div className="flex flex-col gap-6 mt-8 mb-4">
-                                {tags && tags.length > 0 && (
-                                    <div className="flex gap-2 flex-wrap">
-                                        {tags.map((tag, idx) => (
-                                            <Badge key={tag + idx} variant="secondary" className="rounded-full px-4 py-2">
-                                                {tag}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                )}
-                                <DrawerTitle className="font-display text-3xl text-start">{title}</DrawerTitle>
-                                {subtitle && (
-                                    <p className="text-xl text-muted-foreground text-start font-normal">{subtitle}</p>
-                                )}
-                                {techstack && techstack.length > 0 && (
-                                    <div className="flex flex-wrap gap-2">
-                                        {techstack.map((tech, idx) => (
-                                            <Badge key={tech + idx} variant="outline" className="rounded px-3 py-1">
-                                                {tech}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                )}
-                                <DrawerDescription className="text-base text-foreground text-start whitespace-pre-line">
-                                    {details ? details : description}
-                                </DrawerDescription>
-                                <div className="flex gap-2 mt-2">
-                                    {link && (
-                                        <Button
-                                            asChild
-                                            className="w-fit rounded-full"
-                                        >
-                                            <a
-                                                href={link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                Visit Website
-                                                <ExternalLink size={18} />
-                                            </a>
-                                        </Button>
+                        <ScrollArea className="h-[60vh] md:h-auto px-1">
+                            <DrawerHeader>
+                                <div className="flex flex-col gap-6 mt-8 mb-4">
+                                    {tags && tags.length > 0 && (
+                                        <div className="flex gap-2 flex-wrap">
+                                            {tags.map((tag, idx) => (
+                                                <Badge key={tag + idx} variant="secondary" className="rounded-full px-4 py-2">
+                                                    {tag}
+                                                </Badge>
+                                            ))}
+                                        </div>
                                     )}
-                                    {sourceCode && (
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            className="w-fit rounded-full"
-                                        >
-                                            <a
-                                                href={sourceCode}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
+                                    <DrawerTitle className="font-display text-3xl text-start">{title}</DrawerTitle>
+                                    {subtitle && (
+                                        <p className="text-xl text-muted-foreground text-start font-normal">{subtitle}</p>
+                                    )}
+                                    {techstack && techstack.length > 0 && (
+                                        <div className="flex flex-wrap gap-2">
+                                            {techstack.map((tech, idx) => (
+                                                <Badge key={tech + idx} variant="outline" className="rounded px-3 py-1">
+                                                    {tech}
+                                                </Badge>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <DrawerDescription className="text-base text-foreground text-start whitespace-pre-line">
+                                        {details ? details : description}
+                                    </DrawerDescription>
+                                    <div className="flex gap-2 mt-2">
+                                        {link && (
+                                            <Button
+                                                asChild
+                                                className="w-fit rounded-full"
                                             >
-                                                Source Code
-                                                <ExternalLink size={18} />
-                                            </a>
-                                        </Button>
+                                                <a
+                                                    href={link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Visit Website
+                                                    <ExternalLink size={18} />
+                                                </a>
+                                            </Button>
+                                        )}
+                                        {sourceCode && (
+                                            <Button
+                                                asChild
+                                                variant="outline"
+                                                className="w-fit rounded-full"
+                                            >
+                                                <a
+                                                    href={sourceCode}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    Source Code
+                                                    <ExternalLink size={18} />
+                                                </a>
+                                            </Button>
+                                        )}
+                                    </div>
+                                    {image && (
+                                        <div className="rounded-xl overflow-hidden border border-gray-700 shadow-lg w-full aspect-[3/2]">
+                                            <Image
+                                                src={image}
+                                                alt={previewAlt || title}
+                                                className="w-full h-full object-cover"
+                                                width={600}
+                                                height={400}
+                                                priority
+                                            />
+                                        </div>
                                     )}
                                 </div>
-                                {image && (
-                                    <div className="rounded-xl overflow-hidden border border-gray-700 shadow-lg w-full aspect-[3/2]">
-                                        <Image
-                                            src={image}
-                                            alt={previewAlt || title}
-                                            className="w-full h-full object-cover"
-                                            width={600}
-                                            height={400}
-                                            priority
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        </DrawerHeader>
+                            </DrawerHeader>
+                        </ScrollArea>
                     </div>
                 </DrawerContent>
             </Drawer>
