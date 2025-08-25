@@ -103,7 +103,7 @@ export function ProductProjectCard({
                                         ))}
                                     </div>
                                 )}
-                                <DrawerTitle className="text-3xl font-semibold text-start">{title}</DrawerTitle>
+                                <DrawerTitle className="font-display text-3xl text-start">{title}</DrawerTitle>
                                 {subtitle && (
                                     <p className="text-xl text-muted-foreground text-start font-normal">{subtitle}</p>
                                 )}
