@@ -91,9 +91,9 @@ export function ProductProjectCard({
                         <Plus size={20} />
                     </Button>
                 </DrawerTrigger>
-                <DrawerContent className="min-h-[50vh] max-h-[90vh]">
+                <DrawerContent className="min-h-[50vh] max-h-[95vh]">
                     <div className="mx-auto w-full max-w-3xl h-full">
-                        <ScrollArea className="h-[90vh] md:h-auto px-1">
+                        <ScrollArea className="h-[95vh] md:h-auto px-1">
                             <DrawerHeader>
                                 <div className="flex flex-col gap-6 mt-8 mb-4">
                                     {tags && tags.length > 0 && (
@@ -155,7 +155,7 @@ export function ProductProjectCard({
                                         )}
                                     </div>
                                     {image && (
-                                        <div className="rounded-xl overflow-hidden border border-gray-700 shadow-lg w-full aspect-[3/2]">
+                                        <div className="max-sm:mb-[200px] rounded-xl overflow-hidden border border-gray-700 shadow-lg w-full aspect-[3/2]">
                                             <Image
                                                 src={image}
                                                 alt={previewAlt || title}
