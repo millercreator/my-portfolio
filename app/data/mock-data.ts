@@ -74,7 +74,7 @@ export const mockData = {
   fullstackProjects: [  
       {
         logo: "/icons/promptdrive.svg",
-        title: "PromptDrive: Marketplace for AI prompts",
+        title: "PromptDrive",
         subtitle: "Marketplace for AI prompts to find, share, and buy creative ideas",
         description: "Marketplace to find, share, and buy AI prompts.",
         techstack: ["Next.js", "TypeScript", "TailwindCSS", "React", "PostgreSQL"],
