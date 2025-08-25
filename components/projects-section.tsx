@@ -3,41 +3,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 // import { UIUXProjectCarousel } from "@/components/uiux-project-carousel";
-import { FullstackProjectsList } from "@/components/fullstack-projects-list";
 import { mockData } from "@/app/data/mock-data";
 import { UploadProgressCard } from "@/components/upload-progress";
+import { ProductProjectCard } from "./product-project-card";
 
 export function ProjectsSection() {
   const [activeSkill, setActiveSkill] = useState<string | null>("fullstack");
-
-  // Helper to show all project previews when nothing is selected
-  function renderProjectPreview() {
-    return (
-      <>
-        {(activeSkill === null || activeSkill === "uiux") && (
-          <div className="py-6 border-b">
-            {/* <UIUXProjectCarousel /> */}
-            <UploadProgressCard />
-          </div>
-        )}
-        {(activeSkill === null || activeSkill === "fullstack") && (
-          <div className="py-6 border-b">
-            <FullstackProjectsList />
-          </div>
-        )}
-        {(activeSkill === null || activeSkill === "ai") && (
-          <div className="py-6 border-b flex justify-center">
-            <UploadProgressCard />
-          </div>
-        )}
-        {(activeSkill === null || activeSkill === "security") && (
-          <div className="py-6 border-b flex justify-center">
-            <UploadProgressCard />
-          </div>
-        )}
-      </>
-    );
-  }
 
   return (
     <section className="mb-16">
@@ -48,7 +19,7 @@ export function ProjectsSection() {
             key={skill.key}
             variant={activeSkill === skill.key ? "default" : "secondary"}
             className="rounded-full"
-            onClick={() => setActiveSkill(activeSkill === skill.key ? null : skill.key)}
+            onClick={() => activeSkill !== skill.key && setActiveSkill(skill.key)}
             aria-pressed={activeSkill === skill.key}
           >
             {skill.label}
@@ -56,7 +27,24 @@ export function ProjectsSection() {
         ))}
       </div>
 
-      {renderProjectPreview()}
+      <>
+        {(activeSkill === null || activeSkill === "uiux" || activeSkill === "ai" || activeSkill === "security") && (
+          <div className="py-6 border-b">
+            {/* <UIUXProjectCarousel /> */}
+            <UploadProgressCard />
+          </div>
+        )}
+        {(activeSkill === null || activeSkill === "fullstack") && (
+          <div className="py-6 border-b space-y-2">
+            {mockData.fullstackProjects.map((project) => (
+              <ProductProjectCard
+                key={project.title}
+                {...project}
+              />
+            ))}
+          </div>
+        )}
+      </>
     </section>
   );
 }

@@ -14,10 +14,17 @@ import {
 } from "@/components/ui/timeline";
 import { cn } from "@/lib/utils";
 import { mockData } from "@/app/data/mock-data";
-import { Separator } from "./ui/separator";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function KnowledgeTimeline() {
+  const isMobile = useIsMobile();
   const [activeSnapShot, setActiveSnapShot] = useState<null | string>("uiux");
+
+  // On mobile, show all snapshots open
+  const isSnapshotOpen = (itemKey: string) => {
+    if (isMobile) return true;
+    return activeSnapShot === itemKey;
+  };
 
   return (
     <section className="mb-16">
@@ -27,19 +34,22 @@ export function KnowledgeTimeline() {
           <TimelineItem key={item.key} status={item.status === "current" ? undefined : item.status}>
             <TimelineHeading side="right" className="text-base">
               {item.title} - <span className="text-muted-foreground">({item.period})</span>
-              <Button
-                size="lg"
-                variant={activeSnapShot === item.key ? "default" : "secondary"}
-                className={`rounded-full ml-2 transition-all duration-200`}
-                aria-pressed={activeSnapShot === item.key}
-                onClick={() => setActiveSnapShot(activeSnapShot === item.key ? null : item.key)}
-              >
-                <ArrowDown
-                  size={20}
-                  className={`transition-transform duration-200 ${activeSnapShot === item.key ? "rotate-180" : ""}`}
-                />
-                {activeSnapShot === item.key ? "Hide Snapshot" : "Skill Snapshot"}
-              </Button>
+              {/* Hide button on mobile, show on desktop */}
+              {!isMobile && (
+                <Button
+                  size="lg"
+                  variant={activeSnapShot === item.key ? "default" : "secondary"}
+                  className={`rounded-full ml-2 transition-all duration-200`}
+                  aria-pressed={activeSnapShot === item.key}
+                  onClick={() => setActiveSnapShot(activeSnapShot === item.key ? null : item.key)}
+                >
+                  <ArrowDown
+                    size={20}
+                    className={`transition-transform duration-200 ${activeSnapShot === item.key ? "rotate-180" : ""}`}
+                  />
+                  {activeSnapShot === item.key ? "Hide Snapshot" : "Skill Snapshot"}
+                </Button>
+              )}
             </TimelineHeading>
             <TimelineDot status={item.status === "current" ? undefined : item.status} />
             <TimelineLine done={item.status === "done"} />
@@ -51,14 +61,12 @@ export function KnowledgeTimeline() {
               <div
                 className={cn(
                   "transition-all duration-500 ease-in-out overflow-hidden rounded-md w-full flex items-stretch",
-                  activeSnapShot === item.key
+                  isSnapshotOpen(item.key)
                     ? "h-32 opacity-100 mt-3"
                     : "h-0 opacity-0 mt-0"
                 )}
-                aria-hidden={activeSnapShot !== item.key}
+                aria-hidden={!isSnapshotOpen(item.key)}
               >
-                {/* <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:w-0.5" /> */}
-
                 <div className="p-4 flex-1">
                   <p className="text-base font-medium mb-3">Tools & Frameworks Used:</p>
                   <div className="flex flex-wrap gap-4 items-center">

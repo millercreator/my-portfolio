@@ -8,17 +8,15 @@ export const mockData = {
   socialProfiles: [
     {
       image: "/me.jpeg",
-      logo: "/icons/x.svg",
       username: "millercreator_",
-      link: "https://twitter.com/joshuamiller",
-      platform: "twitter",
+      link: "https://x.com/millercreator_",
+      platform: "x",
     },
     {
       image: "/me.jpeg",
-      logo: "/icons/linkedin.svg",
       username: "millercreator",
-      link: "https://github.com/jmiller",
-      platform: "github",
+      link: "https://linkedin.com/in/millercreator/",
+      platform: "linkedin",
     }
   ],
 
@@ -73,28 +71,64 @@ export const mockData = {
     }
   ],
 
-  // Fullstack Projects data
-  fullstackProjects: [
-    {
-      logo: "/mock-images/12.png",
-      title: "Task Manager",
-      description: "Plan tasks, track progress, ship features, simple for dev teams",
-    },
-    {
-      logo: "/mock-images/22.png",
-      title: "Bill Payment Platform",
-      description: "Manage accounts, send money, track spending, secure banking",
-    },
-    {
-      logo: "/mock-images/11.png",
-      title: "Team Chat App",
-      description: "Real-time chat, fast messaging, reliable, easy for teams",
-    },
-    {
-      logo: "/mock-images/22.png",
-      title: "Issue Tracker",
-      description: "Track bugs, assign issues, comment, close tickets quickly",
-    },
+  fullstackProjects: [  
+      {
+        logo: "/icons/promptdrive.svg",
+        title: "PromptDrive: Marketplace for AI prompts",
+        subtitle: "Marketplace for AI prompts to find, share, and buy creative ideas",
+        description: "Marketplace to find, share, and buy AI prompts.",
+        techstack: ["Next.js", "TypeScript", "TailwindCSS", "React", "PostgreSQL"],
+        tags: ["Website", "AI", "Marketplace"],
+        image: "/promptdrive.png",
+        link: "https://photomart-ai.vercel.app/",
+        sourceCode: "https://photomart-ai.vercel.app/",
+        previewAlt: "PromptDrive AI prompt marketplace screenshot",
+        details: `PromptDrive is a simple online marketplace for AI prompts. You can search, share, and buy prompts for different AI tools. The platform helps creators sell their best prompts and lets users find what they need fast.
+
+Built with a clean interface, PromptDrive makes it easy to browse, preview, and purchase prompts. It supports categories, user profiles, and secure payments. The goal is to help everyone get more value from AI, whether you're a creator or just looking for a prompt to use.`
+      },
+//     {
+//       logo: "/icons/promptdrive.svg",
+//       title: "Bill Payment Platform",
+//       subtitle: "Simple, secure bill payments",
+//       description: "Manage accounts, send money, track spending, secure banking",
+//       techstack: ["React", "Node.js", "Express", "MongoDB", "Stripe API"],
+//       tags: ["Fintech", "Payments"],
+//       image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+//       link: "https://example.com/billpay",
+//       previewAlt: "Bill payment dashboard screenshot",
+//       details: `A modern platform for paying bills and managing finances. Users can link accounts, send money, and track spending in real time. Security is built-in, with strong encryption and fraud detection.
+
+// The dashboard gives a clear view of all transactions and spending habits. The platform supports multiple payment methods and is easy to use for everyone.`
+//     },
+//     {
+//       logo: "/icons/promptdrive.svg",
+//       title: "Team Chat App",
+//       subtitle: "Fast, reliable team messaging",
+//       description: "Real-time chat, fast messaging, reliable, easy for teams",
+//       techstack: ["Next.js", "Socket.io", "TypeScript", "Redis", "TailwindCSS"],
+//       tags: ["Chat", "Collaboration"],
+//       image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+//       link: "https://example.com/teamchat",
+//       previewAlt: "Team chat app screenshot",
+//       details: `A chat app built for teams who need to move fast. Messages are delivered instantly, and the interface is simple and clean.
+
+// Features include group chats, file sharing, and notifications. The app is reliable even with many users online at once. It helps teams stay connected and get work done.`
+//     },
+//     {
+//       logo: "/icons/promptdrive.svg",
+//       title: "Issue Tracker",
+//       subtitle: "Track and squash bugs easily",
+//       description: "Track bugs, assign issues, comment, close tickets quickly",
+//       techstack: ["Vue.js", "Firebase", "TailwindCSS"],
+//       tags: ["Productivity", "Bug Tracking"],
+//       image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
+//       link: "https://example.com/issuetracker",
+//       previewAlt: "Issue tracker dashboard screenshot",
+//       details: `A simple tool for tracking bugs and issues. Teams can create tickets, assign them, and comment to keep everyone in the loop.
+
+// The dashboard shows open and closed issues at a glance. Fast search and filters make it easy to find what you need. This tool helps teams fix problems quickly and keep projects on track.`
+//     },
   ],
 
   timelineItems: [

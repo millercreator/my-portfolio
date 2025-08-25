@@ -1,15 +1,11 @@
 import type React from "react"
-import type { Metadata } from "next"
 import { fontVariable } from "@/lib/fonts"
 import { ThemeProvider } from "@/components/theme-provider"
 import { FloatingNav } from "@/components/floating-nav"
+import { metadata as metaConfig } from "../lib/metadata"
 import "./globals.css"
 
-export const metadata: Metadata = {
-  title: "Next.js App",
-  description: "A clean Next.js application",
-  generator: 'v0.app'
-}
+export const metadata = metaConfig;
 
 export default function RootLayout({
   children,
@@ -25,7 +21,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen">{children}
+          <main className="min-h-screen">
+            {children}
             <FloatingNav />
           </main>
         </ThemeProvider>
