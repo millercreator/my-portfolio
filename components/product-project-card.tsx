@@ -93,7 +93,7 @@ export function ProductProjectCard({
                 </DrawerTrigger>
                 <DrawerContent className="min-h-[50vh] max-h-[90vh]">
                     <div className="mx-auto w-full max-w-3xl h-full">
-                        <ScrollArea className="h-[60vh] md:h-auto px-1">
+                        <ScrollArea className="h-[90vh] md:h-auto px-1">
                             <DrawerHeader>
                                 <div className="flex flex-col gap-6 mt-8 mb-4">
                                     {tags && tags.length > 0 && (
