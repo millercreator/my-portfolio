@@ -119,39 +119,39 @@ export function ProductProjectCard({
                                 <DrawerDescription className="text-base text-foreground text-start whitespace-pre-line">
                                     {details ? details : description}
                                 </DrawerDescription>
-                                    <div className="flex gap-2 mt-2">
-                                        {link && (
-                                            <Button
-                                                asChild
-                                                className="w-fit rounded-full"
+                                <div className="flex gap-2 mt-2">
+                                    {link && (
+                                        <Button
+                                            asChild
+                                            className="w-fit rounded-full"
+                                        >
+                                            <a
+                                                href={link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
-                                                <a
-                                                    href={link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    Visit Website
-                                                    <ExternalLink size={18} />
-                                                </a>
-                                            </Button>
-                                        )}
-                                        {sourceCode && (
-                                            <Button
-                                                asChild
-                                                variant="outline"
-                                                className="w-fit rounded-full"
+                                                Visit Website
+                                                <ExternalLink size={18} />
+                                            </a>
+                                        </Button>
+                                    )}
+                                    {sourceCode && (
+                                        <Button
+                                            asChild
+                                            variant="outline"
+                                            className="w-fit rounded-full"
+                                        >
+                                            <a
+                                                href={sourceCode}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                             >
-                                                <a
-                                                    href={sourceCode}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    Source Code
-                                                    <ExternalLink size={18} />
-                                                </a>
-                                            </Button>
-                                        )}
-                                    </div>
+                                                Source Code
+                                                <ExternalLink size={18} />
+                                            </a>
+                                        </Button>
+                                    )}
+                                </div>
                                 {image && (
                                     <div className="rounded-xl overflow-hidden border border-gray-700 shadow-lg w-full aspect-[3/2]">
                                         <Image
